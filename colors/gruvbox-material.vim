@@ -49,7 +49,7 @@ else
   endif
 endif
 call gruvbox_material#highlight('IncSearch', s:palette.bg0, s:palette.bg_red)
-call gruvbox_material#highlight('Search', s:palette.bg0, s:palette.bg_green)
+call gruvbox_material#highlight('Search', s:palette.bg0, s:palette.bg_yellow)
 call gruvbox_material#highlight('ColorColumn', s:palette.none, s:palette.bg2)
 call gruvbox_material#highlight('Conceal', s:palette.grey0, s:palette.none)
 if s:configuration.cursor ==# 'auto'
@@ -204,11 +204,11 @@ call gruvbox_material#highlight('Identifier', s:palette.blue, s:palette.none)
 if s:configuration.disable_italic_comment
   call gruvbox_material#highlight('Comment', s:palette.grey1, s:palette.none)
   call gruvbox_material#highlight('SpecialComment', s:palette.grey1, s:palette.none)
-  call gruvbox_material#highlight('Todo', s:palette.purple, s:palette.none)
+  call gruvbox_material#highlight('Todo', s:palette.fg0, s:palette.bg0)
 else
   call gruvbox_material#highlight('Comment', s:palette.grey1, s:palette.none, 'italic')
   call gruvbox_material#highlight('SpecialComment', s:palette.grey1, s:palette.none, 'italic')
-  call gruvbox_material#highlight('Todo', s:palette.purple, s:palette.none, 'italic')
+  call gruvbox_material#highlight('Todo', s:palette.fg0, s:palette.bg0,'italic' . 'bold')
 endif
 call gruvbox_material#highlight('Delimiter', s:palette.fg0, s:palette.none)
 call gruvbox_material#highlight('Ignore', s:palette.grey1, s:palette.none)
@@ -1685,9 +1685,11 @@ highlight! link clojureDeref Yellow
 " builtin: {{{
 highlight! link matlabSemicolon Fg
 highlight! link matlabFunction RedItalic
-highlight! link matlabImplicit GreenBold
+"highlight! link matlabImplicit GreenBold
+highlight! link matlabImplicit Blue
 highlight! link matlabDelimiter Fg
-highlight! link matlabOperator GreenBold
+"highlight! link matlabOperator GreenBold
+highlight! link matlabOperator Blue
 highlight! link matlabArithmeticOperator Orange
 highlight! link matlabArithmeticOperator Orange
 highlight! link matlabRelationalOperator Orange
